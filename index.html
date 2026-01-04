@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Snake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header>
+            <h1>NEON SNAKE</h1>
+            <div class="scoreboard">
+                <div class="score-box">
+                    <span class="label">SCORE</span>
+                    <span id="score" class="value">000</span>
+                </div>
+                <div class="score-box">
+                    <span class="label">BEST</span>
+                    <span id="high-score" class="value">000</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div id="overlay" class="overlay">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">PRESS START</h2>
+
+                    <div id="auth-container">
+                        <!-- Login Form -->
+                        <div id="login-form" class="auth-box">
+                            <input type="text" id="login-username" placeholder="USERNAME" maxlength="10">
+                            <input type="password" id="login-password" placeholder="PASSWORD">
+                            <div class="auth-actions">
+                                <button id="login-btn" class="auth-btn">LOGIN</button>
+                                <span class="auth-link" id="show-register">Register</span>
+                            </div>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div id="register-form" class="auth-box hidden">
+                            <input type="text" id="reg-username" placeholder="NEW USERNAME" maxlength="10">
+                            <input type="password" id="reg-password" placeholder="PASSWORD">
+                            <div class="auth-actions">
+                                <button id="reg-btn" class="auth-btn">CREATE</button>
+                                <span class="auth-link" id="show-login">Back to Login</span>
+                            </div>
+                        </div>
+
+                        <!-- Logged In View -->
+                        <div id="user-profile" class="auth-box hidden">
+                            <div class="welcome-msg">WELCOME, <span id="current-user-display"
+                                    class="highlight">PLAYER</span></div>
+                            <button id="logout-btn" class="auth-btn small">LOGOUT</button>
+                        </div>
+
+                        <div id="auth-message" class="error-msg"></div>
+                    </div>
+
+                    <div class="difficulty-section">
+                        <div class="difficulty-label">DIFFICULTY</div>
+                        <div class="difficulty-buttons">
+                            <button class="diff-btn" data-speed="100">EASY</button>
+                            <button class="diff-btn active" data-speed="65">NORMAL</button>
+                            <button class="diff-btn" data-speed="40">HARD</button>
+                        </div>
+                    </div>
+
+                    <div class="difficulty-section">
+                        <div class="difficulty-label">GAME MODES</div>
+                        <button id="npc-toggle" class="diff-btn" style="width: 100%;">NPC: OFF</button>
+                    </div>
+
+                    <div class="leaderboard-section">
+                        <h3>TOP PLAYERS</h3>
+                        <ul id="leaderboard-list">
+                            <!-- Leaderboard items will be injected here -->
+                            <li><span>---</span><span>---</span></li>
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 20px;">Use Arrow Keys or WASD to Move</p>
+                    <button id="start-btn">START GAME</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-hint">
+            <div class="key-group">
+                <div class="key">W</div>
+                <div class="key-row">
+                    <div class="key">A</div>
+                    <div class="key">S</div>
+                    <div class="key">D</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
